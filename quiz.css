@@ -24,3 +24,14 @@
     border: 1Px solid black;
     width: 50%;
 }
+.help{
+    border: 1px solid black;
+}
+.help_img{
+ display: flex;
+   justify-content: space-evenly;
+   
+}
+.help{
+    padding: 20px;
+}
