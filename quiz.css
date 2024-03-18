@@ -1,0 +1,26 @@
+.head{
+    display: flex;
+ 
+}
+.head_list{
+    display: flex;
+    margin-left: 600px;
+    list-style: none;
+}
+
+.head_list li{
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.sec1{
+    display: flex;
+}
+.titre{
+    border: 1Px solid black;
+    width: 50%;
+}
+.grand_img{
+    border: 1Px solid black;
+    width: 50%;
+}
