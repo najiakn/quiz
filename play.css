@@ -48,6 +48,13 @@ margin-top: 50px;
 
     
 }
+.btn:hover:not([disabled]){
+    background: #222;
+    color: #fff;
+}
+.btn:disabled{
+    cursor: no-drop;
+}
 .btn_next{
     width: 100px;
     margin-right: 30px;
@@ -55,4 +62,16 @@ margin-top: 50px;
 }
 #para_qst{
     border: 1px solid rgb(255, 255, 255);
+}
+
+.correct{
+    background: #9aeabc;
+}
+.incorrect{
+    background: #ff9393;
+}
+
+.pro_bar {
+    width: 50%;
+    margin: 20px auto;
 }

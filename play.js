@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //remplir array 
 const questions=[
 {
-    question:"mon nom est ?",
+  question:"mon nom est ?",
     answers:[
         {text:"najia zen ",correct: false},
         {text:"najia ghzala",correct:true},
@@ -46,7 +46,7 @@ const questions=[
     ]
 
 },{
-    question:"ilham kidayra ?",
+  question:"ilham kidayra ?",
     answers:[
         {text:"ilham zeeen" , correct:true},
         {text:"ilham hayawanaa",correct:false},
@@ -55,7 +55,7 @@ const questions=[
     ]
 },
 {
-    question:"7na kidayrat ?",
+  question:"7na kidayrat ?",
     answers:[
         {text:"fenaat" , correct:false},
         {text:"ghzalat",correct:false},
@@ -66,7 +66,7 @@ const questions=[
         question:"classe kidayra ?",
         answers:[
             {text:"basslin" , correct:true},
-            {text:"5dh",correct:true},
+            {text:"5dh",correct:false},
             {text:"khayba",correct:false},
             {text:"ra2i3a",correct:false},
         ]
@@ -74,7 +74,7 @@ const questions=[
 }
 
 
-]
+];
 
 const questionElement=document.getElementById("qst_para");
 const answerBtn = document.getElementsByClassName("choix")[0];
@@ -84,10 +84,12 @@ let scor=0;
 function startquiz(){
     index=0;
     scor=0;
+    nexBtn.innerHTML="Neeext";
     showQustion();
 }
 function showQustion(){
-    let currentQuestion=question[index];
+    resetState();
+    let currentQuestion=questions[index];
     let questionNo=index+1;
     questionElement.innerHTML=questionNo + ". "+currentQuestion.question;
 
@@ -96,7 +98,79 @@ function showQustion(){
     button.innerHTML= answer.text;
     button.classList.add("btn");
     answerBtn.appendChild(button);
+    if(answer.correct){
+      button.dataset.correct = answer.correct;
+    }
+    button.addEventListener("click", selectAnswer);
     
    });
 }
+
+function resetState(){
+  nexBtn.style.display = "none";
+  while(answerBtn.firstChild){
+    answerBtn.removeChild(answerBtn.firstChild);
+  }
+}
+
+function selectAnswer(e){
+  const selectbtn = e.target;
+  const isCorrect = selectbtn.dataset.correct === "true";
+  if(isCorrect){
+    selectbtn.classList.add("correct");
+    scor++;
+  }else{
+    selectbtn.classList.add("incorrect");
+  }
+  Array.from(answerBtn.children).forEach(button => {
+    if(button.dataset.correct === "true"){
+      button.classList.add("correct");
+    }
+    button.disabled = true;
+  });
+  nexBtn.style.display = "block";
+}
+function showScore(){
+  resetState();
+  questionElement.innerHTML = `You scord ${scor} out of ${questions.length}!`;
+  nexBtn.innerHTML = "play Again";
+  nexBtn.style.display = "block";
+}
+
+
+function handleNextBtn(){
+  index++;
+  if(index < questions.length){
+    showQustion();
+  }else{
+    showScore();
+  }
+}
+
+nexBtn.addEventListener("click",()=>{
+  if(index < questions.length){
+    handleNextBtn();
+  }else{
+     startquiz();
+  }
+
+});
+
+var prowidth;
+var protext
+function updateProgressBar(progresBar,value){
+  prowidth= progresBar.querySelector(".progresFile").style.width=`${value}%`;
+   protext= progresBar.querySelector(".progresText").textContent=`${value}%`;
+}
+function bar(){
+ 
+ 
+    const pbar=document.querySelector(".progress");
+    updateProgressBar(pbar,10);
+  
+   
+
+  
+}
+
 startquiz();

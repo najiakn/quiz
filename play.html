@@ -5,15 +5,42 @@
     <title>Quiz</title>
     <meta charset="utf-8">
 
-    <link href="bootstrap.min.css" rel="stylesheet">
+     <!--<link href="bootstrap.min.css" rel="stylesheet">-->
     <link href="stylesheet" href="all.min.css">
     <link rel="stylesheet" href="play.css">
+    
+<style>
+    .progress{
+        position: relative;
+        width: 210px;
+        height:30px;
+        background: #9cbab4;
+        border-radius:5px;
+        overflow: hidden;
+
+    }
+    .progresFile{
+        width:0%;
+        height: 100%;
+        background: #009579;
+        transition: all 0.2s;
+
+    }
+    .progresText{
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        transform: translate(-50%);
+        font: bold 14px 'Quicksand' , sans-serif;
+        color: #ffffff;
+    }
+</style>
 </head>
 
 <body>
     <main>
         <div class="time">
-            <span id="scd"></span>:
+          <span id="scd"></span>:
             <span id="min">00</span>
            
         </div>
@@ -22,15 +49,12 @@
             <img src="imgs/logo.png" id="logo">
         </div>
        
-            <div class="pro_bar">
-                <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0"
-                    aria-valuemax="100">
-                    <div class="progress-bar w-75"> 70%</div>
-                </div>
-
-            </div>
-           
+       <div class="progress">
+        <div class="progresFile" ></div>
+        <span class="progresText">0%</span>
         
+ 
+       </div>
         
             
                 <div class="box">
@@ -48,11 +72,15 @@
                    
                 </div>
             <div class="next_div">
-                <button class="btn_next">Next</button>
+                <button class="btn_next" onclick="bar()">Next</button>
                 
             </div>
     </main>
     <script src="play.js"></script>
+    <script>
+   
+        </script>
+        
 </body>
 
 </html>
