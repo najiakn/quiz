@@ -156,21 +156,25 @@ nexBtn.addEventListener("click",()=>{
 
 });
 
-var prowidth;
-var protext
-function updateProgressBar(progresBar,value){
-  prowidth= progresBar.querySelector(".progresFile").style.width=`${value}%`;
-   protext= progresBar.querySelector(".progresText").textContent=`${value}%`;
-}
-function bar(){
- 
- 
-    const pbar=document.querySelector(".progress");
-    updateProgressBar(pbar,10);
-  
-   
+var prowidth = 0;
 
-  
-}
+        function updateProgressBar(progressBar, value) {
+            prowidth = value; // Mettre à jour la valeur de prowidth
+            progressBar.querySelector(".progresFile").style.width = `${value}%`;
+            progressBar.querySelector(".progresText").textContent = `${value}%`;
+        }
+
+        function bar() {
+            const pbar = document.querySelector(".progress");
+            // Augmenter de 6.25% à chaque clic
+            prowidth += 6.25;
+            // Limiter à 100%
+            prowidth = Math.min(prowidth, 100);
+            updateProgressBar(pbar, prowidth);
+            // Réinitialiser si on atteint 100%
+            if (prowidth >= 100) {
+                prowidth = 0;
+            }
+        }
 
 startquiz();
