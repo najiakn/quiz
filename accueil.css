@@ -1,19 +1,32 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
     color: white;
     background-color: black;
 }
-.sc2{
-    text-align: center;
-}
-.sc1{
-    text-align: center;
+
+.centenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
-.sc1 button{
+.sc1 button {
     width: 200px;
     height: 60px;
+}
+.sc2 img {
+    max-width: 100%;
+    height: auto;
+}
+@media screen and (max-width: 600px) {
+    .sc1 button {
+        width: 150px;
+        height: 50px;
+    }
 }
