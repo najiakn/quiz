@@ -2,51 +2,18 @@
     margin: 0;
     padding: 0;
 }
-.Contenu{
-    background-color: aquamarine;
-    width: 600px;
-    display: flex;
-    margin: 5% auto;
-    height:500px;
-    padding: 20px;
+body{
+    color: white;
+    background-color: black;
 }
-.title{
-    background: red;
-    padding: 20px;
+.sc2{
     text-align: center;
-    margin-bottom: 20px;
 }
-.title2{
-    background: gray;
-    margin-bottom: 20px;
-    padding: 20px;
+.sc1{
     text-align: center;
 }
 
-.question{
-    text-align: center;
-    padding: 40px;
-}
-.question button{
-  width: 45%;
-  height: 50px;
-  padding: 30px;
-}
-.Next button{
-    width: 50%;
+.sc1 button{
+    width: 200px;
     height: 60px;
-}
-
-.sec2
-{
-    margin-left: 20px;
-    padding: 20px;
-    width: 183px;
-    background-color: brown;
-}
-.sec2 button{
-    width: 50%;
-    height: 60px;
-    border-radius: 50px 50px;
-    margin-top: 30px;
 }
