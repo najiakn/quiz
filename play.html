@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
     <title>Quiz</title>
@@ -12,17 +12,19 @@
 <style>
     .progress{
         position: relative;
-        width: 210px;
+        width: 1000px;
         height:30px;
-        background: #9cbab4;
+        background: #f8fafa;
         border-radius:5px;
         overflow: hidden;
+       margin-left: 200px;
+        
 
     }
     .progresFile{
         width:0%;
         height: 100%;
-        background: #009579;
+        background: #8b8b8a;
         transition: all 0.2s;
 
     }
@@ -32,7 +34,7 @@
         right: 5px;
         transform: translate(-50%);
         font: bold 14px 'Quicksand' , sans-serif;
-        color: #ffffff;
+        color: #000000;
     }
 </style>
 </head>
@@ -40,13 +42,13 @@
 <body>
     <main>
         <div class="time">
-          <span id="scd"></span>:
+          <span id="scd"></span><span id="point">:</span>
             <span id="min">00</span>
            
         </div>
         
         <div class="logo_div">
-            <img src="imgs/logo.png" id="logo">
+            <img src="imgs/logo.png" id="logo" alt="logo">
         </div>
        
        <div class="progress">
