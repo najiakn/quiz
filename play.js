@@ -5,12 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Définir le temps initial à 15 minutes
   let minutes = 0;
-<<<<<<< HEAD
-  let seconds = 60;
-=======
-  let seconds = 6;
->>>>>>> 77a38b43e11366cbe5d31562e151c3248fc5ae31
 
+  
+  let seconds = 60;
+ 
   // Mettre à jour le temps initial sur la page
   min.innerHTML = (minutes < 10 ? "0" : "") + minutes;
   scd.innerHTML = (seconds < 10 ? "0" : "") + seconds;
@@ -236,11 +234,12 @@ function selectAnswer(e){
   if(isCorrect){
     selectbtn.classList.add("correct");
     scor++;
-<<<<<<< HEAD
+
   
-=======
-    localStorage.setItem('scor', scor);
->>>>>>> 77a38b43e11366cbe5d31562e151c3248fc5ae31
+
+
+    
+
   }else{
     selectbtn.classList.add("incorrect");
   }
@@ -256,7 +255,7 @@ let point=document.getElementById("point");
 const pbar = document.querySelector(".progress");
 function showScore(){
   resetState(); 
-<<<<<<< HEAD
+
   if(scor>=12){
     questionElement.innerHTML=`Félicitations ! Vous avez gagné ; Vous avez marqué ${scor} sur ${questions.length}.`;
   }
@@ -271,9 +270,7 @@ function showScore(){
   point.style.display="none";
   pbar.style.display="none";
 
-=======
-window.location.href = '/resultat.html';
->>>>>>> 77a38b43e11366cbe5d31562e151c3248fc5ae31
+
 }
 
 
@@ -317,22 +314,5 @@ function updateProgressBar(progressBar, value) {
             }
         }
 
-        
-<<<<<<< HEAD
-    
-=======
-        window.onload=function(){
-          startquiz();
- 
-          const savescor = localStorage.getItem('scor');
-          if(savescor !== null){
-            scor=parseInt(savescor);
-            resultat.innerHTML = scor;
-           
-          }
-          localStorage.removeItem('scor');
-          
-        }
->>>>>>> 77a38b43e11366cbe5d31562e151c3248fc5ae31
 
 startquiz();
